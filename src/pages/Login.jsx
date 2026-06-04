@@ -74,7 +74,7 @@ export default function Login() {
       localStorage.removeItem('loginAttempts'); localStorage.removeItem('lockoutTime');
       if (saveIp) localStorage.setItem('trustedDevice', 'true');
       else localStorage.removeItem('trustedDevice');
-      window.location.href = '/';
+      window.location.href = './';
     } else {
       const n = attempts + 1; setAttempts(n); localStorage.setItem('loginAttempts', n.toString());
       const threshold = saveIp ? 1 : 5;

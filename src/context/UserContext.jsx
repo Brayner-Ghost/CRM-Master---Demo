@@ -313,7 +313,7 @@ export const UserProvider = ({ children }) => {
     await signOut(auth);
     localStorage.removeItem('activeCompany');
     sessionStorage.removeItem('session_logged');
-    window.location.href = '/';
+    window.location.href = './';
   };
 
   useEffect(() => {

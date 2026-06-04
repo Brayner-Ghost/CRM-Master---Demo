@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
 import Contacts from './pages/Contacts';
@@ -70,7 +70,7 @@ const ProtectedRoute = ({ children, id }) => {
             Faça o upgrade para liberar este e outros recursos avançados.
           </p>
           <button
-            onClick={() => window.location.href = '/help?tab=plans'}
+            onClick={() => window.location.hash = '#/help?tab=plans'}
             style={{
               width: '100%', height: '56px', backgroundColor: t.accent, color: t.accentContrast,
               border: 'none', borderRadius: t.radiusSmall, fontWeight: 600, fontSize: '1rem',
@@ -115,7 +115,7 @@ const ProtectedRoute = ({ children, id }) => {
             Você não possui as permissões necessárias para acessar este módulo. Contate o administrador do sistema.
           </p>
           <button
-            onClick={() => window.location.href = '/'}
+            onClick={() => window.location.hash = '#/'}
             style={{
               width: '100%', height: '56px', backgroundColor: t.bgSecondary, color: t.text,
               border: t.border, borderRadius: t.radiusSmall, fontWeight: 600, fontSize: '1rem',

@@ -44,8 +44,9 @@ const initialData = {
     "sale-1": {
       id: "sale-1",
       client: { nome: "Lucas Fernandes", telefone: "(11) 98765-1234", cpf: "123.456.789-00" },
-      items: [{ id: "prod-1", name: "Camiseta Dry Fit Premium", quantity: 2, price: 8990, subtotal: 17980 }],
+      items: [{ id: "prod-1", name: "Camiseta Dry Fit Premium", quantity: 2, price: 8990, precoCusto: 3500, subtotal: 17980 }],
       total: 17980,
+      totalCost: 7000,
       paymentMethod: "pix",
       status: "concluido",
       createdAt: new Date(Date.now() - 3600000 * 2).toISOString(),
@@ -54,13 +55,27 @@ const initialData = {
     "sale-2": {
       id: "sale-2",
       client: { nome: "Mariana Alencar", telefone: "(21) 97654-3210", cpf: "987.654.321-11" },
-      items: [{ id: "prod-2", name: "Tênis Running Ultralight", quantity: 1, price: 34990, subtotal: 34990 }],
+      items: [{ id: "prod-2", name: "Tênis Running Ultralight", quantity: 1, price: 34990, precoCusto: 15000, subtotal: 34990 }],
       total: 34990,
+      totalCost: 15000,
       paymentMethod: "cartao_credito",
       status: "concluido",
       createdAt: new Date(Date.now() - 3600000 * 24).toISOString(),
       updatedAt: new Date(Date.now() - 3600000 * 24).toISOString()
     }
+  },
+  "business/demo-company/legacy": {
+    "legacy-1": { id: "legacy-1", status: "concluido", total: 2450000, totalCost: 1050000, createdAt: new Date(new Date().getFullYear(), new Date().getMonth() - 1, 15).toISOString() },
+    "legacy-2": { id: "legacy-2", status: "concluido", total: 2800000, totalCost: 1200000, createdAt: new Date(new Date().getFullYear(), new Date().getMonth() - 2, 15).toISOString() },
+    "legacy-3": { id: "legacy-3", status: "concluido", total: 2200000, totalCost: 950000, createdAt: new Date(new Date().getFullYear(), new Date().getMonth() - 3, 15).toISOString() },
+    "legacy-4": { id: "legacy-4", status: "concluido", total: 3150000, totalCost: 1300000, createdAt: new Date(new Date().getFullYear(), new Date().getMonth() - 4, 15).toISOString() },
+    "legacy-5": { id: "legacy-5", status: "concluido", total: 1980000, totalCost: 800000, createdAt: new Date(new Date().getFullYear(), new Date().getMonth() - 5, 15).toISOString() },
+    "legacy-6": { id: "legacy-6", status: "concluido", total: 2640000, totalCost: 1120000, createdAt: new Date(new Date().getFullYear(), new Date().getMonth() - 6, 15).toISOString() },
+    "legacy-7": { id: "legacy-7", status: "concluido", total: 3300000, totalCost: 1450000, createdAt: new Date(new Date().getFullYear(), new Date().getMonth() - 7, 15).toISOString() },
+    "legacy-8": { id: "legacy-8", status: "concluido", total: 2950000, totalCost: 1280000, createdAt: new Date(new Date().getFullYear(), new Date().getMonth() - 8, 15).toISOString() },
+    "legacy-9": { id: "legacy-9", status: "concluido", total: 2100000, totalCost: 900000, createdAt: new Date(new Date().getFullYear(), new Date().getMonth() - 9, 15).toISOString() },
+    "legacy-10": { id: "legacy-10", status: "concluido", total: 2720000, totalCost: 1180000, createdAt: new Date(new Date().getFullYear(), new Date().getMonth() - 10, 15).toISOString() },
+    "legacy-11": { id: "legacy-11", status: "concluido", total: 2500000, totalCost: 1000000, createdAt: new Date(new Date().getFullYear(), new Date().getMonth() - 11, 15).toISOString() }
   },
   "business/demo-company/tasks": {
     "task-1": { name: "Enviar proposta para Lucas", description: "Follow up da venda pendente", deadline: new Date(Date.now() + 86400000).toISOString().split("T")[0], priority: "high", status: "pending", createdAt: new Date().toISOString() },
