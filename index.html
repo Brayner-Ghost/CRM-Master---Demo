@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/icon-512.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#aa3bff" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM Master - DEMO</title>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname === '::1') {
+        // Unregister service worker in development to prevent caching issues
+        navigator.serviceWorker.getRegistrations().then(registrations => {
+          for (let registration of registrations) {
+            registration.unregister().then(success => {
+              if (success) console.log('SW unregistered successfully for dev environment.');
+            });
+          }
+        });
+        // Clear caches as well to avoid loading stale index.html or assets
+        if ('caches' in window) {
+          caches.keys().then(names => {
+            for (let name of names) {
+              caches.delete(name).then(() => {
+                console.log('Cache cleared for dev:', name);
+              });
+            }
+          });
+        }
+      } else {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('SW registered!', reg))
+            .catch(err => console.log('SW reg error:', err));
+        });
+      }
+    }
+  </script>
+</body>
+
+</html>

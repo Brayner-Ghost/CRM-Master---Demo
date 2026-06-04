@@ -1,0 +1,17 @@
+{
+  "short_name": "CRM Master",
+  "name": "CRM Master",
+  "icons": [
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0a0e27",
+  "display": "standalone",
+  "theme_color": "#aa3bff",
+  "description": "Sistema de CRM completo."
+}

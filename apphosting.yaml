@@ -1,0 +1,30 @@
+# Settings for Backend (on Cloud Run).
+# See https://firebase.google.com/docs/app-hosting/configure#cloud-run
+runConfig:
+  minInstances: 0
+  memoryMiB: 512
+
+# Build configuration
+# See https://firebase.google.com/docs/app-hosting/configure#build-configuration
+# buildConfig:
+#   # Specify the command to build your app.
+#   buildCommand: "npm run build"
+#   # Specify the directory where your build output is located.
+#   outputDirectory: "dist"
+
+# Environment variables and secrets.
+env:
+  - variable: VITE_FIREBASE_API_KEY
+    value: 
+  - variable: VITE_FIREBASE_AUTH_DOMAIN
+    value: 
+  - variable: VITE_FIREBASE_PROJECT_ID
+    value: 
+  - variable: VITE_FIREBASE_STORAGE_BUCKET
+    value: 
+  - variable: VITE_FIREBASE_MESSAGING_SENDER_ID
+    value: ""
+  - variable: VITE_FIREBASE_APP_ID
+    value: 
+  - variable: VITE_ENCRYPTION_KEY
+    value: 
